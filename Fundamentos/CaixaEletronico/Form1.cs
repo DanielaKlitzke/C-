@@ -19,15 +19,22 @@ namespace CaixaEletronico
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Conta conta = new Conta();
-            Cliente cliente = new Cliente();
-            conta.cliente = cliente;
+            ContaPoupanca cp = new ContaPoupanca();
+            ContaInvestimento ci = new ContaInvestimento();
+            cp.Deposita(10);
+            ci.Deposita(100);
+            TotalizadorDeTributos t = new TotalizadorDeTributos();
+            t.Acumula(cp);
+            t.Acumula(ci);
 
-            cliente.nome = "Victor";
-            conta.cliente.rg = "12345678-9";
+            MessageBox.Show("Tributos " + t.Total);
 
-            MessageBox.Show(conta.cliente.nome);
-
+            GerenciadorDeImposto gerenciador = new GerenciadorDeImposto();
+            ContaPoupanca cp2 = new ContaPoupanca();
+            SeguroDeVida sv = new SeguroDeVida();
+            gerenciador.Adiciona(cp);
+            gerenciador.Adiciona(sv);
+            MessageBox.Show("Total: " + gerenciador.Total);
 
         }
     }
