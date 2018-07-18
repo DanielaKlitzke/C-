@@ -19,7 +19,7 @@ namespace CaixaEletronico
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ContaPoupanca cp = new ContaPoupanca();
+            /*ContaPoupanca cp = new ContaPoupanca();
             ContaInvestimento ci = new ContaInvestimento();
             cp.Deposita(10);
             ci.Deposita(100);
@@ -34,7 +34,14 @@ namespace CaixaEletronico
             SeguroDeVida sv = new SeguroDeVida();
             gerenciador.Adiciona(cp);
             gerenciador.Adiciona(sv);
-            MessageBox.Show("Total: " + gerenciador.Total);
+            MessageBox.Show("Total: " + gerenciador.Total);*/
+
+            ContaCorrente c = new ContaCorrente();
+
+            MessageBox.Show("Total: " + ContaCorrente.TotalDeContas);
+
+            MessageBox.Show("Proximo: " + ContaCorrente.ProximoNumero());
+
 
         }
     }

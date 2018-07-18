@@ -25,5 +25,17 @@ namespace CaixaEletronico
                 return true;
             }
         }
+
+        public static int TotalDeContas { get; set; }
+        public ContaCorrente()
+        {
+            ContaCorrente.TotalDeContas++;
+        }
+
+        public static int ProximoNumero()
+        {
+            return ContaCorrente.TotalDeContas + 1;
+        }
+
     }
 }
